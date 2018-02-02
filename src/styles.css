@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; 
+
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+/* @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';  */
+
+.example-card {
+  width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.app-toolbar-filler {
+    flex: 1 1 auto;
+}
+
+th {
+    padding: 10px 0px;
+}
+
+td {
+    padding: 10px 0px;
+}
+
+/* button t */
+.example-selected-value {
+  margin: 15px 0;
+}
+
+

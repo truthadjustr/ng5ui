@@ -1,21 +1,265 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-tab-group class="privileged-tabs">
 
-<router-outlet></router-outlet>
+    <!-- *** ALGO TAB *** -->
+    <mat-tab label="ALGO">
+        <mat-toolbar color="primary">
+            <span>Algo Configuration</span> 
+            <span class="app-toolbar-filler"></span>
+            <button mat-button (click)="create()">Brute Force Login</button>
+            <button mat-button (click)="create()">Jamming</button>
+            <button mat-button (click)="create()">WLAN Attack</button>
+            <button mat-button (click)="create()">Radius Login</button>
+        </mat-toolbar>    
+
+        <mat-card class="example-card">
+            <mat-card-header>
+                <!--
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                -->
+            </mat-card-header>
+
+            <mat-card-content>
+                <p>
+                A description here follows describing what the algo settings is all about
+                and the meaning of each tunable parameters.
+                </p>
+            </mat-card-content>
+
+            <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="Count">
+                <mat-hint align="start">A threshold count, eg. 5</mat-hint>
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="Duration">
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="Timeout">
+            </mat-form-field>
+
+            <br>
+
+            </form>
+
+            <mat-card-actions>
+                <button mat-button>Save</button>
+                <!-- <button mat-button>SHARE</button> -->
+            </mat-card-actions>
+        </mat-card>
+
+    </mat-tab>
+
+    <!-- *** BACKUP TAB *** -->
+    <mat-tab label="BACKUP">
+        <mat-toolbar color="primary">
+            <span>Backup Configuration</span> 
+            <span class="app-toolbar-filler"></span>
+            <button mat-button (click)="create()">List Saves</button>
+            <button mat-button (click)="create()">Load</button>
+            <button mat-button (click)="create()">Save</button>
+            <button mat-button (click)="create()">Update</button>
+        </mat-toolbar>
+    </mat-tab>
+
+    <!-- *** DHCP TAB *** -->
+    <mat-tab label="DHCP">
+        <mat-toolbar color="primary">
+            <span>DHCP Configuration</span> 
+            <span class="app-toolbar-filler"></span>
+        </mat-toolbar>
+
+        <br> 
+
+        <mat-button-toggle-group #dhcpmode="matButtonToggleGroup" value="staticnetworking">
+            <mat-button-toggle value="staticnetworking">
+                <mat-icon>build</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="dhcpnetworking">
+                <mat-icon>check circle</mat-icon>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+        <div class="example-selected-value">status: {{dhcpmode.value}}</div>
+
+        <mat-divider></mat-divider>
+        <br>
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="IP Address">
+                <mat-hint align="start">eg. 192.168.10/24</mat-hint>
+                <!-- <mat-hint align="end">{{message.value.length}} / 256</mat-hint> -->
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="Gateway">
+            </mat-form-field>
+
+            <br>
+ 
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="DNS1">
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="DNS2">
+            </mat-form-field>
+        </form>
+
+        <br>
+
+        <button mat-raised-button color="primary">Save</button>
+
+    </mat-tab>
+
+    <!-- *** SNMP TAB *** -->
+    <mat-tab label="SNMP">
+        <mat-toolbar color="primary">
+            <span>SNMP Configuration</span> 
+            <span class="app-toolbar-filler"></span>
+            <button mat-button (click)="create()">Local</button>
+            <button mat-button (click)="create()">Remote</button>
+        </mat-toolbar>
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="IP Address">
+                <mat-hint align="start">eg. 192.168.10</mat-hint>
+                <!-- <mat-hint align="end">{{message.value.length}} / 256</mat-hint> -->
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="SNMP Port">
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="SNMP trap string">
+            </mat-form-field>
+            <br>
+        </form>
+        <button mat-raised-button color="primary">Save</button>
+
+    </mat-tab>
+
+    <!-- *** SSH TAB *** -->
+    <mat-tab label="SSH">
+        <mat-toolbar color="primary">
+            <span>SSH Configuration</span> 
+            <span class="app-toolbar-filler"></span>
+        </mat-toolbar>
+
+        <mat-button-toggle-group #sshmode="matButtonToggleGroup" value="configsshport">
+            <mat-button-toggle value="configsshport">
+                <mat-icon>settings</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="disablessh">
+                <mat-icon>stop</mat-icon>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+        <div class="example-selected-value">Status: {{sshmode.value}}</div>
+
+        <mat-divider></mat-divider>
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="ssh port number">
+            </mat-form-field>
+
+            <br>
+
+        </form>
+
+        <button mat-raised-button color="primary">Save</button>
+
+    </mat-tab>
+
+    <!-- *** SYSLOG TAB *** -->
+    <mat-tab label="SYSLOG">
+        <mat-toolbar color="primary">
+            <span>Syslog Configuration</span> 
+            <span class="app-toolbar-filler"></span>
+            <button mat-button (click)="create()">Local</button>
+            <button mat-button (click)="create()">Remote</button>
+        </mat-toolbar>
+
+        <br> 
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="IP Address">
+                <mat-hint align="start">eg. 192.168.10</mat-hint>
+                <!-- <mat-hint align="end">{{message.value.length}} / 256</mat-hint> -->
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="Syslog Port">
+            </mat-form-field>
+
+            <br>
+
+            <br>
+        </form>
+        <button mat-raised-button color="primary">Save</button>
+
+    </mat-tab>
+
+    <!-- *** USER TAB *** -->
+    <mat-tab label="USER">
+        <mat-toolbar color="primary">
+            <span>User Configuration</span> 
+            <span class="app-toolbar-filler"></span>
+        </mat-toolbar>
+    </mat-tab>
+
+    <!-- *** WEB TAB *** -->
+    <mat-tab label="WEB">
+        <mat-toolbar color="primary">
+            <span>Web Configuration</span> 
+            <span class="app-toolbar-filler"></span>
+        </mat-toolbar>
+
+        <br>
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput #message maxlength="256" placeholder="HTTP port">
+            </mat-form-field>
+        </form>
+
+        <br> 
+
+        <button mat-raised-button color="accent" (click)="imgFileInput.click()">Upload certificate</button>
+
+        <!-- <button mat-button type="button" md-button (click)="imgFileInput.click()">Upload certificate</button> -->
+        <input hidden type="file" #imgFileInput (change)="previewImage($event)"/> 
+        <input placeholder="cert" value="certificate.crt">
+        <br>
+        <br>
+        <button mat-raised-button color="primary">Save</button>
+    </mat-tab>
+
+    <!-- *** EXIT TAB *** -->
+    <mat-tab label="EXIT">
+        <mat-toolbar color="primary">
+            <span>Exit</span> 
+            <span class="app-toolbar-filler"></span>
+        </mat-toolbar>
+    </mat-tab>
+</mat-tab-group>
